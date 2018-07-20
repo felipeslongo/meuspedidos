@@ -1,24 +1,11 @@
 ﻿using FizzWare.NBuilder;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using Xunit;
 
 namespace MeusPedidos.Domain.Tests.Entities
 {
     public class CatalogSectionTests
     {
-        [Fact]
-        public void Constructor_WithEmptyProducts_Exception()
-        {
-            // Arrange
-            var productsMock = new Product[0];
-
-            // Act
-            // Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => new CatalogSection(productsMock));
-        }
-
         [Fact]
         public void Constructor_WithFiveProducts_SucessWithFiveProductsOrderedByFifo()
         {
@@ -30,7 +17,7 @@ namespace MeusPedidos.Domain.Tests.Entities
 
             // Assert
             Assert.NotNull(section.Products);
-            Assert.Equal(productsMock.Count, section.Products.Count);
+            Assert.Equal(productsMock.Count, section.Products.Count());
             Assert.Equal(productsMock, section.Products);
         }
 
@@ -54,7 +41,7 @@ namespace MeusPedidos.Domain.Tests.Entities
         {
             // Arrange
             var productsMock = Builder<Product>.CreateListOfSize(5).Build();
-            var sale = Builder<Sale>.CreateNew().Build();
+            var sale = Builder<SaleMock>.CreateNew().Build();
 
             // Act
             var section = new CatalogSection(sale, productsMock);

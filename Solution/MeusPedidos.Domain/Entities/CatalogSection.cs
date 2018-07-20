@@ -10,7 +10,10 @@ namespace MeusPedidos.Domain
     /// </summary>
     public class CatalogSection
     {
-        private readonly List<Product> _products;
+        /// <summary>
+        /// Produtos da seção.
+        /// </summary>
+        private readonly List<Product> _products = new List<Product>();
 
         /// <summary>
         /// Construtor de um agrupamento de produtos sob a mesma promoção.
@@ -19,11 +22,9 @@ namespace MeusPedidos.Domain
         /// <param name="products"></param>
         public CatalogSection(Sale sale, IEnumerable<Product> products)
         {
-            if (!products.Any())
-                throw new ArgumentOutOfRangeException("Não é possível criar uma Seção de Catálogo de Produto vazia.");
-
             Sale = sale;
-            _products = products.ToList();
+            if (products != null)
+                _products = products.ToList();
         }
 
         /// <summary>
@@ -34,8 +35,25 @@ namespace MeusPedidos.Domain
         {
         }
 
+        public CatalogSection(Sale sale) : this(sale, null)
+        {
+        }
+
+        public CatalogSection() : this(null, null)
+        {
+        }
+
         public bool HasSale => Sale != null;
-        public IReadOnlyList<Product> Products => _products;
+        public bool IsEmpty => !Products.Any();
+        public IEnumerable<Product> Products => _products;
         public Sale Sale { get; }
+
+        public void AddProduct(Product product) => _products.Add(product);
+
+        public void AddProducts(IEnumerable<Product> products) => _products.AddRange(products);
+
+        public bool CanAdd(Product product) => Sale?.IsOnSale(product) ?? true;
+
+        public void RemoveProducts(IEnumerable<Product> products) => _products.RemoveAll(p => products.Contains(p));
     }
 }
