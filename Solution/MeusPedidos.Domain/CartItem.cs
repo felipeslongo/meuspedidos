@@ -12,7 +12,8 @@ namespace MeusPedidos.Domain
             Units = units;
         }
 
-        public decimal Discount => Sale.CalculateDiscount(Product, Units).Value * Price;
+        public decimal Discount => DiscountPercent.Value * Price;
+        public Percent DiscountPercent => Sale?.CalculateDiscount(Product, Units) ?? Percent.Zero;
         public decimal Price => Product.Price * Units;
 
         public decimal PriceToPay => Price - Discount;

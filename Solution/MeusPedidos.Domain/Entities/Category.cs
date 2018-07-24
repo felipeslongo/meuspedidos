@@ -4,15 +4,13 @@ using System.Text;
 
 namespace MeusPedidos.Domain
 {
-    public class Category
+    public class Category : EntityBase
     {
-        public Category(int id, string name)
+        public Category(int id, string name) : base(id)
         {
-            Id = id;
             Name = name;
         }
 
-        public int Id { get; protected set; }
         public string Name { get; set; }
     }
 }

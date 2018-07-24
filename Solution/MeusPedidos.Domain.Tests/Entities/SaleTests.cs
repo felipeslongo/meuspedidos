@@ -83,13 +83,15 @@ namespace MeusPedidos.Domain.Tests.Entities
             //Arrange
             var category = Builder<CategoryMock>.CreateNew().Build();
             var sale = new Sale(category, "Sale");
-            var product = Builder<Product>.CreateNew().Do(p => p.Category = category).Build();
+            var product = Builder<Product>.CreateNew()
+                .Do(p => p.Category = new Category(category.Id + 1, category.Name))
+                .Build();
 
             //Act
             var actual = sale.IsOnSale(product);
 
             //Assert
-            Assert.True(actual);
+            Assert.False(actual);
         }
 
         [Fact]
@@ -98,15 +100,13 @@ namespace MeusPedidos.Domain.Tests.Entities
             //Arrange
             var category = Builder<CategoryMock>.CreateNew().Build();
             var sale = new Sale(category, "Sale");
-            var product = Builder<Product>.CreateNew()
-                .Do(p => p.Category = Builder<CategoryMock>.CreateNew().Build())
-                .Build();
+            var product = Builder<Product>.CreateNew().Do(p => p.Category = new Category(category.Id, category.Name)).Build();
 
             //Act
             var actual = sale.IsOnSale(product);
 
             //Assert
-            Assert.False(actual);
+            Assert.True(actual);
         }
     }
 }

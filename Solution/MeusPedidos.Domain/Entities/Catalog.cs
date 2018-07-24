@@ -40,36 +40,6 @@ namespace MeusPedidos.Domain
         {
             AddSales(sales);
             AddProducts(products);
-
-            //if (products == null || !products.Any())
-            //    return;
-
-            //if (sales == null)
-            //{
-            //    _sections.Add(new CatalogSection(products));
-            //    return;
-            //}
-
-            //CatalogSection noSaleSection = new CatalogSection();
-            //foreach (var product in products)
-            //{
-            //    var sale = sales.FirstOrDefault(s => s.IsOnSale(product));
-            //    CatalogSection saleSection;
-
-            //    if (sale == null)
-            //        saleSection = noSaleSection;
-            //    else if (!_salesSections.TryGetValue(sale, out saleSection))
-            //    {
-            //        saleSection = new CatalogSection();
-            //        _salesSections[sale] = saleSection;
-            //        _sections.Add(saleSection);
-            //    }
-
-            //    saleSection.AddProduct(product);
-            //}
-
-            //if (noSaleSection.Products.Any())
-            //    _sections.Add(noSaleSection);
         }
 
         public IEnumerable<Product> Products => SectionsWithProducts.SelectMany(section => section.Products);

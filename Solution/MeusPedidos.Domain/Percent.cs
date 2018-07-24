@@ -20,6 +20,8 @@ namespace MeusPedidos.Domain
             Value = (decimal)value / 100;
         }
 
+        public static Percent Zero => new Percent();
         public decimal Value { get; }
+        public decimal ValuePercent => Value * 100;
     }
 }
