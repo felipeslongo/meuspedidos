@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">#FEFF8C</color>
+
+    <color name="textColorPrimary">@color/black</color>
+    <color name="textColorPrimaryInverse">@color/white</color>
+    <color name="windowBackground">#EFEFF4</color>
+    <color name="colorBackground">@color/white</color>
+    <!-- ?android:attr/colorBackground-->
+
+
+    <color name="discountBackground">#FD3E56</color>
+    <color name="addBackground">#4A4A4A</color>
+    <color name="removeBackground">#9B9B9B</color>
+
+    <!-- 2014 Material Design color palettes -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Gray -->
+    <color name="gray50">#FAFAFA</color>
+    <color name="gray100">#F5F5F5</color>
+    <color name="gray200">#EEEEEE</color>
+    <color name="gray300">#E0E0E0</color>
+    <color name="gray400">#BDBDBD</color>
+    <color name="gray500">#9E9E9E</color>
+    <color name="gray600">#757575</color>
+    <color name="gray700">#616161</color>
+    <color name="gray800">#424242</color>
+    <color name="gray900">#212121</color>
+
+
+    <!-- Red -->
+    <color name="red50">#FFEBEE</color>
+    <color name="red100">#FFCDD2</color>
+    <color name="red200">#EF9A9A</color>
+    <color name="red300">#E57373</color>
+    <color name="red400">#EF5350</color>
+    <color name="red500">#F44336</color>
+    <color name="red600">#E53935</color>
+    <color name="red700">#D32F2F</color>
+    <color name="red800">#C62828</color>
+    <color name="red900">#B71C1C</color>
+    <color name="redA100">#FF8A80</color>
+    <color name="redA200">#FF5252</color>
+    <color name="redA400">#FF1744</color>
+    <color name="redA700">#D50000</color>
+
+</resources>

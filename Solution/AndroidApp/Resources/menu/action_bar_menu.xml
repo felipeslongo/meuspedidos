@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/action_bar_menu_filter_list"
+            android:title="ActionBar Spinner"
+            android:icon="@drawable/baseline_filter_list_white_24"
+            android:background="@color/colorBackground"
+            app:showAsAction="always" >
+            <menu>
+            </menu>
+        </item>
+</menu>

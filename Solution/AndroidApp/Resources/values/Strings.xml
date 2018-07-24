@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MeusPedidos</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="finish_purchase">Finalizar a compra</string>
+    <string name="activity_cart_label">Carrinho</string>
+    <string name="title_activity_catalog">CatalogActivity</string>
+    <string name="activity_catalog_toolbar_title">Catálogo</string>
+    <string name="filter_list_all_categories">Todas as categorias</string>
+    <string name="total">Total</string>
+</resources>
