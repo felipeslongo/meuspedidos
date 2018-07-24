@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/windowBackground">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/sale"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Promoção Queima de Estoque"
+        android:layout_margin="8dp"
+        android:visibility="gone"/>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Game Horizon Zero Dawn - PS4"
+            app:layout_constraintStart_toEndOf="@+id/photo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/photo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_shopping_cart_black_48" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@+id/photo"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            android:text="12,5%"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:drawableStart="@drawable/baseline_arrow_downward_white_18"
+            android:background="@color/discountBackground"
+            android:backgroundTint="@color/discountBackground"
+            android:drawableTint="@color/textColorPrimaryInverse"
+            android:textColor="@color/textColorPrimaryInverse"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="R$ 144,38"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/photo"
+            app:layout_constraintTop_toBottomOf="@+id/discount" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/remove"
+            android:layout_width="72dp"
+            android:layout_height="44dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="1dp"
+            android:background="@color/removeBackground"
+            android:backgroundTint="@color/removeBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/add"
+            app:srcCompat="@drawable/baseline_remove_white_36" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/add"
+            android:layout_width="72dp"
+            android:layout_height="44dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/addBackground"
+            android:backgroundTint="@color/addBackground"
+            android:tint="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/baseline_add_black_36" />
+
+
+        <ToggleButton
+            android:id="@+id/favorite"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:drawableRight="@drawable/favorite_selector"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- android:backgroundTint="@color/colorBackground" -->
+
+        <!--
+        <android.support.design.widget.too
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorBackground"
+            android:src="@drawable/favorite_selector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+           -->
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/unitsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:enabled="false"
+            android:text="UN"
+            app:layout_constraintBottom_toTopOf="@+id/remove"
+            app:layout_constraintEnd_toStartOf="@+id/favorite" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/units"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="25"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/unitsLabel"
+            app:layout_constraintEnd_toStartOf="@+id/unitsLabel" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.LinearLayoutCompat>
